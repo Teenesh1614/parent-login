@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Parent Login - Classic Style</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Login Form -->
+  <div class="container" id="loginForm">
+    <h2>Parent Login</h2>
+    <form onsubmit="showDashboard(event)">
+      <label for="parentId">Parent ID (Email)</label>
+      <input type="text" id="parentId" required placeholder="Enter Parent Email">
+
+      <label for="password">Password</label>
+      <input type="password" id="password" required placeholder="Enter Password">
+
+      <label>CAPTCHA</label>
+      <div class="captcha">B7F4C</div>
+      <input type="text" required placeholder="Enter CAPTCHA">
+
+      <button type="submit">Login</button>
+
+      <div class="link">
+        <a href="#" onclick="showForgotPassword()">Forgot Password?</a> |
+        <a href="#" onclick="toggleForm()">Register</a>
+      </div>
+    </form>
+  </div>
+
+  <!-- Registration Form -->
+  <div class="container hidden" id="registerForm">
+    <h2>Register Parent</h2>
+    <form onsubmit="handleRegister(event)">
+      <label>Parent Name</label>
+      <input type="text" required>
+
+      <label>Email</label>
+      <input type="email" required>
+
+      <label>Password</label>
+      <input type="password" required>
+
+      <h3>Student Details</h3>
+      <label>Student Name</label>
+      <input type="text" required>
+
+      <label>Department</label>
+      <input type="text" required>
+
+      <label>Year</label>
+      <input type="text" placeholder="e.g. Second Year" required>
+
+      <label>Roll Number</label>
+      <input type="text" required>
+
+      <label>Section</label>
+      <input type="text">
+
+      <label>Date of Birth</label>
+      <input type="text" placeholder="DD-MM-YYYY" required>
+
+      <button type="submit">Register</button>
+      <div class="link"><a href="#" onclick="toggleForm()">Back to Login</a></div>
+    </form>
+  </div>
+
+  <!-- Forgot Password Form -->
+  <div class="container hidden" id="forgotForm">
+    <h2>Reset Password</h2>
+    <form onsubmit="resetPassword(event)">
+      <label>Email</label>
+      <input type="email" id="resetEmail" placeholder="Enter registered email" required>
+
+      <button type="submit">Send Reset Link</button>
+      <div class="link">
+        <a href="#" onclick="showLoginFromForgot()">Back to Login</a>
+      </div>
+    </form>
+  </div>
+
+  <!-- Dashboard -->
+  <div class="dashboard hidden" id="dashboard">
+    <h2>Student Dashboard</h2>
+
+    <div class="card">
+      <h3>Student Name</h3>
+      <p id="studentName">John Doe</p>
+    </div>
+
+    <div class="card">
+      <h3>Department</h3>
+      <p id="department">Computer Science</p>
+    </div>
+
+    <div class="card">
+      <h3>Year</h3>
+      <p id="year">Second Year</p>
+    </div>
+
+    <div class="card">
+      <h3>Attendance</h3>
+      <p id="attendance">92%</p>
+    </div>
+
+    <div class="link">
+      <a href="#" onclick="logout()">Logout</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
